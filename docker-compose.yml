@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  angular:
+    container_name: angularTest
+    build: ./abm-angular
+    image: angular:v2
+    ports: 
+      - "4200:4200"
+    expose:
+      - 4200
+    networks:
+      - internalnet
+
+  express:
+    container_name: expresstest
+    build: ./abm-api
+    image: express:v1
+    expose:
+      - 3000
+    networks:
+      - internalnet
+    depends_on:
+      - angular
+
+networks:
+  internalnet:
+    driver: bridge
