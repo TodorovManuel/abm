@@ -80,7 +80,7 @@ input:active {
         <form>
           <h2>Agregar</h2>
           <h3>País</h3>
-          <label for="idPais">Id </label>
+          <label for="idPais">Id Pais</label>
           <input type="number" id="idPais" name="idPais" required>
           <label for="nombrePais">Nombre</label>
           <input type="text" id="nombrePais" name="nombrePais" placeholder="Argentina" required>
@@ -89,23 +89,25 @@ input:active {
 
         <form>
           <h3>Provincia</h3>
-          <label for="idProvincia">Id</label>
+          <label for="idPais">Id País</label>
+          <input type="number" id="idPais" name="idPais" [formControl]="idPais" required>
+          <label for="idProvincia">Id Provincia</label>
           <input type="number" id="idProvincia" name="idProvincia" required>
           <label for="nombreProvincia">Nombre</label>
           <input type="text" id="nombreProvincia" name="nombreProvincia" placeholder="Argentina" required>
-          <label for="idPais">Id País</label>
-          <input type="number" id="idPais" name="idPais" [formControl]="idPais" required>
           <button class="agregarBtn" type="button" (click)="enviar()">Agregar</button>
         </form>
 
         <form>
           <h3>Municipio</h3>
-          <label for="idMunicipio">Id</label>
+          <label for="idPais">Id País</label>
+          <input type="number" id="idPais" name="idPais" [formControl]="idPais" required>
+          <label for="idProvincia">Id Provincia</label>
+          <input type="number" id="idProvincia" name="idProvincia" required>
+          <label for="idMunicipio">Id Municipio</label>
           <input type="number" id="idMunicipio" name="idMunicipio" required>
           <label for="nombreMunicipio">Nombre</label>
           <input type="text" id="nombreMunicipio" name="nombreMunicipio" placeholder="Argentina" required>
-          <label for="idProvincia">Id Provincia</label>
-          <input type="number" id="idProvincia" name="idProvincia" required>
           <button class="agregarBtn" type="button" >Agregar</button>
         </form>
 
@@ -113,37 +115,32 @@ input:active {
 
 
 
-
         <div class="formsContainer">
           <form>
             <h2>Borrar</h2>
             <h3>País</h3>
-            <label for="idPais">Id </label>
+            <label for="idPais">Id pais</label>
             <input type="number" id="idPais" name="idPais" required>
-            <label for="nombrePais">Nombre</label>
-            <input type="text" id="nombrePais" name="nombrePais" placeholder="Argentina" required>
             <button class="borrarBtn"  type="button">Borrar</button>
           </form>
   
           <form>
             <h3>Provincia</h3>
-            <label for="idProvincia">Id</label>
+            <label for="idPais">Id Pais</label>
+            <input type="number" id="idPais" name="idPais" required>
+            <label for="idProvincia">Id Provincia</label>
             <input type="number" id="idProvincia" name="idProvincia" required>
-            <label for="nombreProvincia">Nombre</label>
-            <input type="text" id="nombreProvincia" name="nombreProvincia" placeholder="Argentina" required>
-            <label for="idPais">Id País</label>
-            <input type="number" id="idPais" name="idPais" [formControl]="idPais" required>
             <button class="borrarBtn"  type="button" (click)="enviar()">Borrar</button>
           </form>
   
           <form>
             <h3>Municipio</h3>
-            <label for="idMunicipio">Id</label>
-            <input type="number" id="idMunicipio" name="idMunicipio" required>
-            <label for="nombreMunicipio">Nombre</label>
-            <input type="text" id="nombreMunicipio" name="nombreMunicipio" placeholder="Argentina" required>
+            <label for="idPais">Id Pais</label>
+            <input type="number" id="idPais" name="idPais" required>
             <label for="idProvincia">Id Provincia</label>
             <input type="number" id="idProvincia" name="idProvincia" required>
+            <label for="idMunicipio">Id Municipio</label>
+            <input type="number" id="idMunicipio" name="idMunicipio" required>
             <button  class="borrarBtn" type="button" >Borrar</button>
           </form>
       </div>
@@ -154,32 +151,32 @@ input:active {
         <form>
           <h2>Modificar</h2>
           <h3>País</h3>
-          <label for="idPais">Id </label>
+          <label for="idPais">Id pais</label>
           <input type="number" id="idPais" name="idPais" required>
-          <label for="nombrePais">Nombre</label>
+          <label for="nombrePais">Nuevo nombre</label>
           <input type="text" id="nombrePais" name="nombrePais" placeholder="Argentina" required>
           <button type="button">Modificar</button>
         </form>
 
         <form>
           <h3>Provincia</h3>
-          <label for="idProvincia">Id</label>
+          <label for="idPais">Id pais</label>
+          <input type="number" id="idPais" name="idPais" required>
+          <label for="idProvincia">Id provincia</label>
           <input type="number" id="idProvincia" name="idProvincia" required>
-          <label for="nombreProvincia">Nombre</label>
+          <label for="nombreProvincia">Nuevo nombre</label>
           <input type="text" id="nombreProvincia" name="nombreProvincia" placeholder="Argentina" required>
-          <label for="idPais">Id País</label>
-          <input type="number" id="idPais" name="idPais" [formControl]="idPais" required>
           <button type="button" (click)="enviar()">Modificar</button>
         </form>
 
         <form>
           <h3>Municipio</h3>
-          <label for="idMunicipio">Id</label>
-          <input type="number" id="idMunicipio" name="idMunicipio" required>
-          <label for="nombreMunicipio">Nombre</label>
-          <input type="text" id="nombreMunicipio" name="nombreMunicipio" placeholder="Argentina" required>
+          <label for="idPais">Id pais</label>
+          <input type="number" id="idPais" name="idPais" required>
           <label for="idProvincia">Id Provincia</label>
           <input type="number" id="idProvincia" name="idProvincia" required>
+          <label for="idMunicipio">Id municipio</label>
+          <input type="number" id="idMunicipio" name="idMunicipio" required>
           <button type="button" >Modificar</button>
         </form>
     </div>

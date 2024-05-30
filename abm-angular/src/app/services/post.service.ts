@@ -10,24 +10,17 @@ export class PostService {
   }
 // Get
 private urlPais = 'http://localhost:3000/api/paises/all'; 
-private urlProvincia = 'http://localhost:3000/api/';
+private urlProvincia = 'http://localhost:3000/api/paises/';
 private urlMunicipio = 'http://localhost:3000/api/paises/';
 
 // Agregar
 private urlPaisAgregar = 'http://localhost:3000/api/paises/add';
-private urlProvinciaAgregar = 'http://localhost:3000/api/paises/';
-private urlMunicipioAgregar = 'http://localhost:3000/api/paises/';
-
 // Borrar
 private urlPaisBorrar = 'http://localhost:3000/api/paises/delete/';
-private urlProvinciaBorrar = 'http://localhost:3000/api/paises/';
-private urlMunicipioBorrar = 'http://localhost:3000/api/paises/';
-
 // Modificar
 private urlPaisModificar = 'http://localhost:3000/api/paises/update/';
-private urlProvinciaModificar = 'http://localhost:3000/api/paises/';
-private urlMunicipioModificar = 'http://localhost:3000/api/paises/';
-constructor(private httpClient: HttpClient) { }
+
+constructor(private httpClient: HttpClient) {}
 
 // Get functions
 getPaises(): Observable<any>{
@@ -46,10 +39,10 @@ agregarPais(pais: any): Observable<any> {
   return this.httpClient.post(this.urlPaisAgregar, pais);
 }
 agregarProvincia(provincia: any): Observable<any> {
-  return this.httpClient.post(this.urlProvinciaAgregar+provincia.id+"/add", provincia);
+  return this.httpClient.post(this.urlProvincia+provincia.id+"/add", provincia);
 }
 agregarMunicipio(provincia:any, municipio: any): Observable<any> {
-  return this.httpClient.post(this.urlMunicipioAgregar, provincia.id+"/provincias/"+municipio.id+"/add", municipio);
+  return this.httpClient.post(this.urlMunicipio, provincia.id+"/provincias/"+municipio.id+"/add", municipio);
 }
 
 
@@ -58,10 +51,10 @@ borrarPais(id: number): Observable<any> {
   return this.httpClient.delete(this.urlPaisBorrar + '/' + id);
 }
 borrarProvincia(id: number, idProvincia: number): Observable<any> {
-  return this.httpClient.delete(this.urlProvinciaBorrar + '/' + id + '/provincias/' + idProvincia);
+  return this.httpClient.delete(this.urlProvincia + '/' + id + '/provincias/' + idProvincia);
 }
 borrarMunicipio(id: number, idProvincia:number, idMunicipio:number): Observable<any> {
-  return this.httpClient.delete(this.urlMunicipioBorrar + '/' + id + '/provincias/' + idProvincia + '/municipios/' + idMunicipio);
+  return this.httpClient.delete(this.urlMunicipio + '/' + id + '/provincias/' + idProvincia + '/municipios/' + idMunicipio);
 }
 
 
@@ -70,10 +63,10 @@ modificarPais(pais: any): Observable<any> {
   return this.httpClient.put(this.urlPaisModificar + '/' + pais.id, pais);
 }
 modificarProvincia(provincia: any): Observable<any> {
-  return this.httpClient.put(this.urlProvinciaModificar + '/' + provincia.id, provincia);
+  return this.httpClient.put(this.urlProvincia + '/' + provincia.id, provincia);
 }
 modificarMunicipio(municipio: any): Observable<any> {
-  return this.httpClient.put(this.urlMunicipioModificar + '/' + municipio.id, municipio);
+  return this.httpClient.put(this.urlMunicipio + '/' + municipio.id, municipio);
 }
 
 }
